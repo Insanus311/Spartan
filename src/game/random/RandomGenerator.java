@@ -23,4 +23,9 @@ public class RandomGenerator {
     public int calculateDamage(int min, int max) {
         return (int)(Math.random() * (max - min) + min);
     }
+
+    public int calculateShuriken(int max){
+        return (int)(Math.random() * (max) + 1);
+    }
+
 }

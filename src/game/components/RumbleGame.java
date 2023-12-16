@@ -1,5 +1,8 @@
 package game.components;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 import game.random.RandomGenerator;
 
 public class RumbleGame {
@@ -10,6 +13,8 @@ public class RumbleGame {
     private boolean loopGame = true;
     private int round = 0;
     private SegundaEvaluacionUI segundaEvaluacionUI;
+    private boolean playerOneOut = false;
+    private boolean playerTwoOut = false;
 
     public static RumbleGame getInstance() {
         return instance;
@@ -87,18 +92,37 @@ public class RumbleGame {
         castleTwo.setLifeLabel(segundaEvaluacionUI.getVidasPlayerTwoLabel());
     }
 
-    public void nextRound() {
+    public void nextRound() throws EmpateException {
         System.out.println();
         System.out.println();
         System.out.println("Siguiente Ronda numero: " + round);
         int jugador = RandomGenerator.getInstance().nextPlayer();
         System.out.println("Mueve primero el Jugador numero " + jugador);
         if(jugador == 1) {
+            try {
             playerOne.nextRound();
+            } catch (NoMonstersException e){
+                playerOneOut = true;
+            }
+            try {
             playerTwo.nextRound();
+            } catch (NoMonstersException e){
+                playerTwoOut = true;
+            }
         } else {
+            try {
             playerTwo.nextRound();
+            } catch (NoMonstersException e){
+                playerTwoOut = true;
+            }
+            try {
             playerOne.nextRound();
+            } catch (NoMonstersException e){
+                playerOneOut = true;
+            }
+        }
+        if (playerOneOut && playerTwoOut){
+            throw new EmpateException();
         }
         segundaEvaluacionUI.refresh();
         round++;
@@ -122,10 +146,19 @@ public class RumbleGame {
                 this.nextRound();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
+            } catch (EmpateException e) {
+                loopGame = false;
             }
         }
         //TODO: Colocar una ventana modal con un mensaje que indique el resultado
-
+        String ganador;
+        if (playerOne.getCastle().getCastleLife() == 0){
+            ganador = "Ganador el Jugador Azul!!!";
+        } else if (playerTwo.getCastle().getCastleLife() == 0){
+            ganador = "Ganador el Jugador Rojo!!!";
+        } else ganador  = "Empateeee!!!!";
+        JOptionPane.showConfirmDialog(segundaEvaluacionUI, ganador, "Termino el juegooooo",
+                                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE); 
         System.exit(0);
     }
 }

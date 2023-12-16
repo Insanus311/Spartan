@@ -29,7 +29,7 @@ public class Player {
 
     }
 
-    public void nextRound() {
+    public void nextRound() throws NoMonstersException {
         this.castle.nextRound(id, monsterIterator);
     }
 

@@ -14,7 +14,7 @@ public class Castle {
         return castleLife;
     }
 
-    public void nextRound(Long playerId, Iterator<Monster> monsterIterator) {
+    public void nextRound(Long playerId, Iterator<Monster> monsterIterator) throws NoMonstersException {
         if(!westPath.haveMonster(playerId)) {
             if(monsterIterator.hasNext()) {
                 westPath.releaseMonster(playerId, monsterIterator.next());
@@ -30,6 +30,11 @@ public class Castle {
         } else {
             eastPath.nextRound(playerId, this);
         }
+
+        if (!eastPath.haveMonster(playerId) && !westPath.haveMonster(playerId) && !monsterIterator.hasNext()){
+            throw new NoMonstersException();
+        }
+
         westPath.update();
         eastPath.update();
         lifeLabel.setText("Vidas: " + this.castleLife);
