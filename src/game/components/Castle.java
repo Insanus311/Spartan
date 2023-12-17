@@ -1,6 +1,9 @@
 package game.components;
 
 import javax.swing.*;
+
+import game.exceptions.NoMonstersException;
+
 import java.util.Iterator;
 
 public class Castle {

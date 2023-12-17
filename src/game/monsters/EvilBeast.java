@@ -15,8 +15,4 @@ public class EvilBeast extends Monster {
         this.types = Arrays.asList(Type.BEAST, Type.DEMON, Type.FIRE);
     }
 
-    @Override
-    public void attack(Monster enemy) {
-        enemy.onDamageReceive(this.activeSkill.damage(enemy), this);
-    }
 }

@@ -28,4 +28,8 @@ public class RandomGenerator {
         return (int)(Math.random() * (max) + 1);
     }
 
+    public int calcularPorcentual(){
+        return (int)(Math.random()*100);
+    }
+
 }

@@ -1,4 +1,4 @@
-package game.components;
+package game.exceptions;
 
 public class EmpateException extends Exception {
     

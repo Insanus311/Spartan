@@ -1,8 +1,9 @@
 package game.components;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+import game.exceptions.EmpateException;
+import game.exceptions.NoMonstersException;
 import game.random.RandomGenerator;
 
 public class RumbleGame {

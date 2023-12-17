@@ -22,11 +22,6 @@ public class IceBeast extends Monster {
     }
 
     @Override
-    public void attack(Monster monster) {
-        monster.onDamageReceive(this.activeSkill.damage(monster), this);
-    }
-
-    @Override
     public void move(PathBox oldPathBox, PathBox newPathBox) {
         super.move(oldPathBox, newPathBox);
         if(activeSkill instanceof ColdBreath) {
