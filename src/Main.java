@@ -2,8 +2,7 @@ import game.comparators.CompDefensa;
 import game.comparators.CompVida;
 import game.components.Monster;
 import game.components.RumbleGame;
-import game.monsters.EvilBeast;
-import game.monsters.IceBeast;
+
 
 
 import game.monsters.Spartan;
