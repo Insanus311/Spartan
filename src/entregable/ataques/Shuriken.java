@@ -1,10 +1,11 @@
 package entregable.ataques;
 
+import game.attacks.Attack;
 import game.components.Monster;
 import game.random.RandomGenerator;
 import game.types.Type;
 
-public class Shuriken implements ArteMarcial {
+public class Shuriken implements ArteMarcial, Attack {
 
     int cantSHuriken = 20;
     

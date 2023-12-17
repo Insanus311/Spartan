@@ -3,7 +3,7 @@ package game.attacks;
 import game.components.Monster;
 import game.random.RandomGenerator;
 
-public class Slice implements Sword {
+public class Slice implements Sword, Attack {
 
     @Override
     public int damage(Monster monster) {

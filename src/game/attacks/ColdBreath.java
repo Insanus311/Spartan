@@ -4,7 +4,7 @@ import game.components.Monster;
 import game.random.RandomGenerator;
 import game.types.Type;
 
-public class ColdBreath implements Cold {
+public class ColdBreath implements Cold, Attack {
 
     @Override
     public int damage(Monster monster) {

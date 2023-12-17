@@ -1,11 +1,12 @@
 package entregable.ataques;
 
+import game.attacks.Attack;
 import game.attacks.Beast;
 import game.components.Monster;
 import game.random.RandomGenerator;
 import game.types.Estado;
 
-public class Cabezazo implements Beast {
+public class Cabezazo implements Beast, Attack {
 
     @Override
     public int damage(Monster monster) {

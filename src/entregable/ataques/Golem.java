@@ -1,7 +1,5 @@
 package entregable.ataques;
 
-import game.attacks.Attack;
-
-public interface Golem extends Attack{
+public interface Golem extends Skill{
     
 }

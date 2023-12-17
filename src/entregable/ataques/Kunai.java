@@ -1,10 +1,11 @@
 package entregable.ataques;
 
+import game.attacks.Attack;
 import game.components.Monster;
 import game.random.RandomGenerator;
 import game.types.Type;
 
-public class Kunai implements ArteMarcial {
+public class Kunai implements ArteMarcial, Attack {
 
     @Override
     public int damage(Monster monstruo){

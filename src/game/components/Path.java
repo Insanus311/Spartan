@@ -35,8 +35,8 @@ public class Path {
                     } else {
                         System.out.println("Casilla " + occupiedPathBox.get().getNorthBox().getName() + " Esta ocupada!!!");
                         System.out.println("Monstruo " + occupiedPathBox.get().getMonster() + " Ataca a " + occupiedPathBox.get().getNorthBox().getMonster());
-                        occupiedPathBox.get().getMonster().attack(occupiedPathBox.get().getNorthBox().getMonster());
-                        occupiedPathBox.get().getNorthBox().getMonster().attack(occupiedPathBox.get().getMonster());
+                        occupiedPathBox.get().getMonster().act(occupiedPathBox.get().getNorthBox().getMonster());
+                        occupiedPathBox.get().getNorthBox().getMonster().act(occupiedPathBox.get().getMonster());
                     }
                     if((occupiedPathBox.get().getNorthBox().getMonster()!=null)&&(occupiedPathBox.get().getNorthBox().getMonster().getLife() <= 0)) {
                         occupiedPathBox.get().getNorthBox().setMonster(null);
@@ -54,8 +54,8 @@ public class Path {
                     } else {
                         System.out.println("Casilla " + occupiedPathBox.get().getSouthBox().getName() + " Esta ocupada!!!");
                         System.out.println("Monstruo " + occupiedPathBox.get().getMonster() + " Ataca a " + occupiedPathBox.get().getSouthBox().getMonster());
-                        occupiedPathBox.get().getMonster().attack(occupiedPathBox.get().getSouthBox().getMonster());
-                        occupiedPathBox.get().getSouthBox().getMonster().attack(occupiedPathBox.get().getMonster());
+                        occupiedPathBox.get().getMonster().act(occupiedPathBox.get().getSouthBox().getMonster());
+                        occupiedPathBox.get().getSouthBox().getMonster().act(occupiedPathBox.get().getMonster());
                     }
                     if ((occupiedPathBox.get().getSouthBox().getMonster()!=null)&&(occupiedPathBox.get().getSouthBox().getMonster().getLife() <= 0)) {
                         occupiedPathBox.get().getSouthBox().setMonster(null);

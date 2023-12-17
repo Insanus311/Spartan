@@ -2,7 +2,7 @@ package game.attacks;
 
 import game.components.Monster;
 
-public class Curse implements Demon {
+public class Curse implements Demon, Attack {
 
     @Override
     public int damage(Monster monster) {

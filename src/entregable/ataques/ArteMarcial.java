@@ -1,7 +1,5 @@
 package entregable.ataques;
 
-import game.attacks.Attack;
-
-public interface ArteMarcial extends Attack {
+public interface ArteMarcial extends Skill {
     
 }

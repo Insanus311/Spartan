@@ -2,21 +2,29 @@ package game.components;
 
 import game.attacks.Attack;
 import game.types.*;
-
 import java.util.List;
+import entregable.ataques.Mejora;
+import entregable.ataques.Skill;
 
 
 public abstract class Monster {
-
     protected Integer life;
-    protected Attack activeSkill;
+    protected Skill activeSkill;
     private Player player;
     protected String monsterName;
     protected List<Type> types;
     protected Estado estado = Estado.DEFAULT;
 
-    public void attack(Monster monster){
-        int damage = this.activeSkill.damage(monster);
+    public void act(Monster monster){
+        if (activeSkill instanceof Attack){
+            act((Attack)activeSkill,monster);
+        }
+        else act((Mejora)activeSkill,this);
+    }
+
+
+    private void act(Attack skill, Monster monster){
+        int damage = skill.damage(monster);
         if (estado.equals(Estado.ATURDIDO)){
             damage /= 2;
             estado = Estado.DEFAULT;
@@ -24,6 +32,12 @@ public abstract class Monster {
         System.out.println("--     ["+ this +"] ataca a [" + monster + "] haciendole " + damage + " de daño");
         monster.onDamageReceive(damage, this);
     }
+
+
+    private void act(Mejora skill, Monster monster){
+        skill.activar(monster);
+    }
+
 
     public void onDamageReceive(Integer damage, Monster monster) {
         if (estado.equals(Estado.DEFENSA)){

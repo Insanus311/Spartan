@@ -1,35 +1,34 @@
 package entregable.monstruos;
 
 import java.util.Arrays;
+import java.util.List;
 
 import entregable.ataques.Apedrear;
+import entregable.ataques.DefensaPetrea;
+import entregable.ataques.Skill;
 import game.components.Monster;
 import game.components.PathBox;
 import game.random.RandomGenerator;
-import game.types.Estado;
 import game.types.Type;
 
 public class GolemEmpedrado extends Monster {
 
+    List<Skill> skills = Arrays.asList(new Apedrear(), new DefensaPetrea());
+
     public GolemEmpedrado(String name) {
         this.life = 1000;
         this.monsterName = name;
-        this.activeSkill = new Apedrear();
+        this.activeSkill = skills.get(0);
         this.types = Arrays.asList(Type.GOLEM, Type.DEFENSA, Type.PIEDRA);
     }
 
     @Override
-    public void attack(Monster monster){
-        int porcentaje = RandomGenerator.getInstance().calcularPorcentual() % 3;
-        switch (porcentaje) {
-            case 0:
-                super.attack(monster);
-                break;
-            case 1:
-                this.estado = Estado.DEFENSA;
-                break;
-            case 2:
-                break;
+    public void act(Monster monster){
+        if (RandomGenerator.getInstance().calcularPorcentual()>30){
+            super.act(monster);
+        }
+        if (RandomGenerator.getInstance().calcularPorcentual()>50){
+            activeSkill = skills.stream().filter(skill -> skill != activeSkill).findFirst().get();
         }
     }
 

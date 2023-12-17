@@ -20,8 +20,8 @@ public class FireBeast extends Monster {
     }
 
     @Override
-    public void attack(Monster monstruo){
-        super.attack(monstruo);
+    public void act(Monster monstruo){
+        super.act(monstruo);
         if (activeSkill instanceof ZarpazoIgneo){
             activeSkill = attacks.get(1);
         } else {

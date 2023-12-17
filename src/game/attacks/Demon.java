@@ -1,4 +1,6 @@
 package game.attacks;
 
-public interface Demon extends Attack {
+import entregable.ataques.Skill;
+
+public interface Demon extends Skill {
 }

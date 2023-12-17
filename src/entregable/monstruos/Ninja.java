@@ -20,11 +20,11 @@ public class Ninja extends Monster {
     }
 
     @Override
-    public void attack(Monster monster){
+    public void act(Monster monster){
         if (shuriken.getCantSHuriken() == 0){
             activeSkill = kunai;
         }
-        super.attack(monster);
+        super.act(monster);
     }
 
     @Override

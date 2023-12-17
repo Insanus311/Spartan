@@ -3,7 +3,7 @@ package game.attacks;
 import game.components.Monster;
 import game.random.RandomGenerator;
 
-public class IceSpike implements Cold {
+public class IceSpike implements Cold, Attack {
 
     @Override
     public int damage(Monster monster) {
