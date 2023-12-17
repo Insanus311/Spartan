@@ -19,7 +19,7 @@ public abstract class Monster {
         int damage = this.activeSkill.damage(monster);
         if (estado.equals(Estado.ATURDIDO)){
             damage /= 2;
-            estado = Estado.ATURDIDO;
+            estado = Estado.DEFAULT;
         }
         System.out.println("--     ["+ this +"] ataca a [" + monster + "] haciendole " + damage + " de daño");
         monster.onDamageReceive(damage, this);

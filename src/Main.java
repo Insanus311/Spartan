@@ -11,6 +11,7 @@ import game.monsters.Spartan;
 import java.util.Arrays;
 import java.util.List;
 
+import entregable.monstruos.FireBeast;
 import entregable.monstruos.GolemEmpedrado;
 import entregable.monstruos.Ninja;
 
@@ -49,7 +50,8 @@ public class Main {
         List<Monster> monstersTwo = Arrays.asList(
                 new Spartan("Spartan A"),
                 new GolemEmpedrado("Manolito"),
-                new Spartan("Spartan B")
+                new Spartan("Spartan B"),
+                new FireBeast("Alejandrito")
                 );
 
         //TODO ordenar el listado de monstruos que recibe el jugador dos
