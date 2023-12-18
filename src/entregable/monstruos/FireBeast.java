@@ -27,6 +27,7 @@ public class FireBeast extends Monster {
         } else {
             activeSkill = attacks.get(0);
             estado = Estado.ATURDIDO;
+            System.out.println("--     ["+ this +"] ha sido aturdido por su propio cabezazo!!!");
         }
     }
 }

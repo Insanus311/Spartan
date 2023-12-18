@@ -16,6 +16,7 @@ public class ZarpazoIgneo implements Fire, Beast, Attack {
         if (monster.getTypes().contains(Type.COLD))
             damage *= 1.5;
         monster.setEstado(Estado.QUEMANDOSE);
+        System.out.println("--     ["+ monster +"] Se esta quemando!!!");
         return damage;
     }
     

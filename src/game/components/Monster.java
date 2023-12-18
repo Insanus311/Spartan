@@ -35,12 +35,14 @@ public abstract class Monster {
 
 
     private void act(Mejora skill, Monster monster){
+        System.out.print("--     ["+ this +"] activo la habilidad: ");
         skill.activar(monster);
     }
 
 
     public void onDamageReceive(Integer damage, Monster monster) {
         if (estado.equals(Estado.DEFENSA)){
+            System.out.println(this + " se escudo de este ataque");
             damage = damage / 2;
             estado = Estado.DEFAULT;
         }
@@ -57,6 +59,7 @@ public abstract class Monster {
             if(this.life < 0) {
                 this.life = 0;
             }
+            System.out.println(this + " recibio daño por quemaduras, queda con " + this.life + " puntos de vida");
         }
         oldPathBox.setMonster(null);
         newPathBox.setMonster(this);

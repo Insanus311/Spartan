@@ -23,6 +23,7 @@ public class Ninja extends Monster {
     public void act(Monster monster){
         if (shuriken.getCantSHuriken() == 0){
             activeSkill = kunai;
+            System.out.println("--     ["+ this +"] ha agotado sus shuriken");
         }
         super.act(monster);
     }
@@ -32,5 +33,6 @@ public class Ninja extends Monster {
         if (RandomGenerator.getInstance().calcularPorcentual() > 40){
             super.onDamageReceive(damage, monster);
         }
+        else System.out.println("--     ["+ this +"] ha esquivado el ataque");
     }
 }

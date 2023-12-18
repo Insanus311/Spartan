@@ -7,6 +7,7 @@ public class DefensaPetrea implements Defensa, Piedra, Mejora {
 
     @Override
     public void activar(Monster monster) {
+        System.out.println("Defensa Petrea!!!");
         monster.setEstado(Estado.DEFENSA);
     }
     

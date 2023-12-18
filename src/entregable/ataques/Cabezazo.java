@@ -12,6 +12,7 @@ public class Cabezazo implements Beast, Attack {
     public int damage(Monster monster) {
         int damage = RandomGenerator.getInstance().calculateDamage(50, 160);
         monster.setEstado(Estado.ATURDIDO);
+        System.out.println("--     ["+ monster +"] fue aturdido!!");
         return damage;
     }
     
