@@ -17,13 +17,13 @@ public abstract class Monster {
 
     public void act(Monster monster){
         if (activeSkill instanceof Attack){
-            act((Attack)activeSkill,monster);
+            attack((Attack)activeSkill,monster);
         }
-        else act((Mejora)activeSkill,this);
+        else boost((Mejora)activeSkill,this);
     }
 
 
-    private void act(Attack skill, Monster monster){
+    private void attack(Attack skill, Monster monster){
         int damage = skill.damage(monster);
         if (estado.equals(Estado.ATURDIDO)){
             damage /= 2;
@@ -34,7 +34,7 @@ public abstract class Monster {
     }
 
 
-    private void act(Mejora skill, Monster monster){
+    private void boost(Mejora skill, Monster monster){
         System.out.print("--     ["+ this +"] activo la habilidad: ");
         skill.activar(monster);
     }

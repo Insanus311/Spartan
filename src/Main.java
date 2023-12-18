@@ -2,9 +2,7 @@ import game.comparators.CompDefensa;
 import game.comparators.CompVida;
 import game.components.Monster;
 import game.components.RumbleGame;
-
-
-
+import game.monsters.IceBeast;
 import game.monsters.Spartan;
 
 import java.util.Arrays;
@@ -25,8 +23,8 @@ public class Main {
                 new Spartan("Spartan 3"),
                 new Ninja ("Kai"),
                 new Spartan("Spartan 4"),
-                new Spartan("Spartan 5")
-                /*new Spartan("Spartan 6"),
+                new Spartan("Spartan 5"),
+                new Spartan("Spartan 6"),
                 new Spartan("Spartan 7"),
                 new Spartan("Spartan 8"),
                 new Spartan("Spartan 9"),
@@ -37,7 +35,7 @@ public class Main {
                 new Spartan("Spartan 34"),
                 new Spartan("Spartan 44"),
                 new Spartan("Spartan 64"),
-                new Spartan("Spartan 15")*/
+                new Spartan("Spartan 15")
                 );
 
         //TODO ordenar el listado de monstruos que recibe el jugador uno
@@ -53,7 +51,6 @@ public class Main {
                 new FireBeast("Alejandrito")
                 );
 
-        //TODO ordenar el listado de monstruos que recibe el jugador dos
         monstersTwo.sort(new CompDefensa());
 
         rumbleGame.getPlayerTwo().setMonsters(monstersTwo);

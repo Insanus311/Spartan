@@ -37,9 +37,13 @@ public class Path {
                         System.out.println("Monstruo " + occupiedPathBox.get().getMonster() + " Ataca a " + occupiedPathBox.get().getNorthBox().getMonster());
                         occupiedPathBox.get().getMonster().act(occupiedPathBox.get().getNorthBox().getMonster());
                         occupiedPathBox.get().getNorthBox().getMonster().act(occupiedPathBox.get().getMonster());
+
                     }
                     if((occupiedPathBox.get().getNorthBox().getMonster()!=null)&&(occupiedPathBox.get().getNorthBox().getMonster().getLife() <= 0)) {
                         occupiedPathBox.get().getNorthBox().setMonster(null);
+                    }
+                    if((occupiedPathBox.get().getMonster()!=null)&&(occupiedPathBox.get().getMonster().getLife() <= 0)) {
+                        occupiedPathBox.get().setMonster(null);
                     }
                 }
             } else {
@@ -59,6 +63,9 @@ public class Path {
                     }
                     if ((occupiedPathBox.get().getSouthBox().getMonster()!=null)&&(occupiedPathBox.get().getSouthBox().getMonster().getLife() <= 0)) {
                         occupiedPathBox.get().getSouthBox().setMonster(null);
+                    }
+                    if((occupiedPathBox.get().getMonster()!=null)&&(occupiedPathBox.get().getMonster().getLife() <= 0)) {
+                      occupiedPathBox.get().setMonster(null);
                     }
                 }
             }
